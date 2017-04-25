@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Start with CSS</title>
+	<style type="text/css">
+		/*	Three triangles positioned on top of each other and rotated to get shape of a star with 5 sides.*/
+		#star{
+			width : 0px;
+			height: 0px;
+			border-bottom: 70px solid red;
+			border-left: 100px solid transparent;
+			border-right: 100px solid transparent;
+			transform: rotate(36deg);/*180/5=36deg*/
+			position: relative;
+			display: block;
+			margin : 50px
+		}
+
+		#star:before {
+		  border-bottom: 70px solid red;
+		  border-left: 30px solid transparent;
+		  border-right: 30px solid transparent;
+		  position: absolute;
+		  height: 0;
+		  width: 0;
+		  top: -45px;  /*To overlap each element precisely using position: absolute; and rotate with transform*/
+		  left: -65px;
+		  display: block;
+		  content: '';
+		  transform: rotate(-36deg);
+		}
+
+		#star:after {
+		  position: absolute;
+		  display: block;
+		  top: 3px; /*To overlap each element precisely using position: absolute; and rotate with transform*/
+		  left: -105px;
+		  width: 0px;
+		  height: 0px;
+		  border-bottom: 70px solid red;
+		  border-right: 100px solid transparent;
+		  border-left: 100px solid transparent;
+		  transform: rotate(-72deg);
+		  content: '';
+		}
+	</style>
+</head>
+<body>
+<div id="star"></div>
+</body>
+</html>
